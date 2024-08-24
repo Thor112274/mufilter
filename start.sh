@@ -8,7 +8,7 @@ then
   git clone https://github.com/Thor112274/filter1.git /filter1
 else
   echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /Neha
+  git clone $UPSTREAM_REPO /filter1
 fi
 cd /filter1
 pip3 install -U -r requirements.txt
