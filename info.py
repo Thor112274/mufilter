@@ -106,8 +106,8 @@ else:
     ON_HEROKU = False
 BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else (APP_NAME or '') + '.herokuapp.com'
-URL = "https://moviesuniverse2-9030175b9762.herokuapp.com".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "https://moviesuniverse2-9030175b9762.herokuapp.com/".format(FQDN, PORT)
+URL = "http://152.42.182.254:8080".format(FQDN) if ON_HEROKU or NO_PORT else \
+    "http://152.42.182.254:8080/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -122,9 +122,9 @@ else:
     ON_HEROKU = False
 HAS_SSL=bool(getenv('HAS_SSL',False))
 if HAS_SSL:
-    URL = "https://moviesuniverse2-9030175b9762.herokuapp.com/".format(FQDN)
+    URL = "http://152.42.182.254:8080/".format(FQDN)
 else:
-    URL = "https://moviesuniverse2-9030175b9762.herokuapp.com/".format(FQDN)
+    URL = "http://152.42.182.254:8080/".format(FQDN)
 
 
 
