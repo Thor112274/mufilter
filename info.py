@@ -61,7 +61,7 @@ IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
-PORT = environ.get("PORT", "8080")
+PORT = environ.get("PORT", "9004")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+JPjF6TKDQEBhMTk1')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/MoviesU2')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/MoviesU2')
@@ -122,9 +122,9 @@ else:
     ON_HEROKU = False
 HAS_SSL=bool(getenv('HAS_SSL',False))
 if HAS_SSL:
-    URL = "http://152.42.182.254:8080/".format(FQDN)
+    URL = "http://152.42.182.254:9004/".format(FQDN)
 else:
-    URL = "http://152.42.182.254:8080/".format(FQDN)
+    URL = "http://152.42.182.254:9004/".format(FQDN)
 
 
 
