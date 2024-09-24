@@ -61,7 +61,7 @@ IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
-PORT = environ.get("PORT", "22")
+PORT = environ.get("PORT", "8087")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+JPjF6TKDQEBhMTk1')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/MoviesU2')
 TUTORIAL = environ.get('TUTORIAL', 'https://t.me/MoviesU2')
@@ -104,10 +104,10 @@ if 'DYNO' in environ:
     APP_NAME = environ.get('APP_NAME')
 else:
     ON_HEROKU = False
-BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
+BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '8087'))
 FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else (APP_NAME or '') + '.herokuapp.com'
-URL = "http://134.209.111.56:22".format(FQDN) if ON_HEROKU or NO_PORT else \
-    "http://134.209.111.56:22/".format(FQDN, PORT)
+URL = "http://134.209.111.56:8087".format(FQDN) if ON_HEROKU or NO_PORT else \
+    "http://134.209.111.56:8087/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'LazyBot'))
@@ -122,9 +122,9 @@ else:
     ON_HEROKU = False
 HAS_SSL=bool(getenv('HAS_SSL',False))
 if HAS_SSL:
-    URL = "http://134.209.111.56:22/".format(FQDN)
+    URL = "http://134.209.111.56:8087/".format(FQDN)
 else:
-    URL = "http://134.209.111.56:22/".format(FQDN)
+    URL = "http://134.209.111.56:8087/".format(FQDN)
 
 
 
